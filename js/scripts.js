@@ -7,10 +7,14 @@ function encrypt(sentence){
     groups.forEach(function(group){
       encryptedArray.push(group.charAt(i));
     });
+  console.log(encryptedArray);
   }
   return encryptedArray;
 }
 
+function decrypt(sentence) {
+
+}
 
 $(function(){
   $('#user-input').submit(function(event){
@@ -19,5 +23,6 @@ $(function(){
     var encrypted = encrypt(userInput).join("");
     encrypted = encrypted.match(/.{1,5}/g).join(" ");
     $('#result').text(encrypted);
+    var decrypted = decrypt(encrypted);
   });
 });
